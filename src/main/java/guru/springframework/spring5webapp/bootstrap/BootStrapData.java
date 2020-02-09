@@ -24,11 +24,18 @@ public class BootStrapData implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        System.out.println("Started in Bootstrap");
+
+        Publisher pub = new Publisher("OReilly","LaneCove","Sydney", "NSW","2066");
+        publisherRepository.save(pub);
+
+        System.out.println("Publisher Count: " + publisherRepository.count());
+
         Author auth = new Author("Vivek","Narayanan");
         Book book = new Book("Java Spring Boot","123123123");
         book.getAuthors().add(auth);
         auth.getBooks().add(book);
-        Publisher pub = new Publisher("OReilly","LaneCove","Sydney", "NSW","2066");
+
         book.setPublisher(pub);
         pub.getBooks().add(book);
         authorRepository.save(auth);
