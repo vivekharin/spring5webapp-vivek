@@ -9,13 +9,13 @@
 <Table>
     <tr>
         <th> ID </th>
-        <th> Title </th>
-        <th> Publisher </th>
+        <th> FirstName </th>
+        <th> LastName </th>
     </tr>
     <tr th:each="author:${authors}">
         <td th:text="${author.id}">
         <td th:text="${author.firstname}">
-        <td th:text="${author.book.title}">
+        <td th:text="${author.lastName}">
     </tr>
 </Table>
 
